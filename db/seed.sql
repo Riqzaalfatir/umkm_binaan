@@ -1,50 +1,67 @@
--- Data dummy untuk demo
+-- Data UMKM Binaan (di-generate dari data terbaru)
 
-INSERT INTO kategori_usaha (nama) VALUES
-  ('Kuliner'), ('Kerajinan'), ('Fashion'), ('Jasa'), ('Pertanian')
-ON CONFLICT (nama) DO NOTHING;
+-- Data untuk kategori_usaha
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('6d162098-ea1c-48b9-9222-3e9c5e71b397', 'Kuliner', '2026-07-18 08:33:45.598348+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('ab23255b-1a8b-40ac-a6da-0cb4e29d63da', 'Kerajinan', '2026-07-18 08:33:45.598348+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('e94342d4-9328-4a0a-9bcd-f960f6c1f016', 'Fashion', '2026-07-18 08:33:45.598348+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('730f543e-8c65-4acf-81db-29bf0e104b06', 'Jasa', '2026-07-18 08:33:45.598348+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('4e9d733e-458e-41ad-be5c-cb76133c2941', 'Pertanian', '2026-07-18 08:33:45.598348+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('e5eae8e9-1338-469b-b074-db40c43398fb', 'Teknologi', '2026-07-18 09:02:35.658894+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('7eb2013f-a9c2-4bab-93e1-dda517025b29', 'Kesehatan', '2026-07-18 09:02:39.730524+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('18ed1a96-cfa2-4524-b2ad-8c8ae399c9fb', 'Pariwisata', '2026-07-18 09:02:43.262712+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('5341aa0e-465c-4a41-89f4-07168fab7831', 'Pendampingan', '2026-07-18 09:03:53.030339+07');
+INSERT INTO kategori_usaha (id, nama, created_at) VALUES ('6b6d7869-7095-42d6-a03b-3979a2e265bf', 'Pelatihan', '2026-07-18 09:04:04.023112+07');
 
-INSERT INTO umkm (nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status)
-SELECT v.nama_usaha, v.nama_pemilik, v.nib, k.id, v.alamat, v.telepon, v.status
-FROM (VALUES
-  ('Kopi Senja', 'Dewi Anggraini', '1234567890123', 'Kuliner', 'Jl. Merdeka No. 12, Bandung', '081234567801', 'aktif'),
-  ('Batik Alam Sari', 'Sutrisno', '1234567890124', 'Kerajinan', 'Jl. Kaliurang No. 45, Yogyakarta', '081234567802', 'aktif'),
-  ('Rumah Jahit Mega', 'Megawati Putri', NULL, 'Fashion', 'Jl. Sudirman No. 8, Surabaya', '081234567803', 'aktif'),
-  ('Bengkel Berkah', 'Agus Salim', '1234567890125', 'Jasa', 'Jl. Diponegoro No. 21, Semarang', '081234567804', 'nonaktif'),
-  ('Sayur Segar Tani', 'Ny. Sumiati', NULL, 'Pertanian', 'Jl. Raya Lembang No. 3, Bandung', '081234567805', 'aktif'),
-  ('Roti Bunda', 'Siti Fatimah', '1234567890126', 'Kuliner', 'Jl. Ahmad Yani No. 17, Malang', '081234567806', 'aktif'),
-  ('Anyaman Rotan Jaya', 'Bambang Wijaya', NULL, 'Kerajinan', 'Jl. Cihampelas No. 90, Bandung', '081234567807', 'aktif'),
-  ('Laundry Kilat', 'Rina Marlina', NULL, 'Jasa', 'Jl. Gajah Mada No. 5, Jakarta', '081234567808', 'aktif')
-) AS v(nama_usaha, nama_pemilik, nib, kategori_nama, alamat, telepon, status)
-JOIN kategori_usaha k ON k.nama = v.kategori_nama;
+-- Data untuk umkm
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('18eef014-b564-4406-8823-67001ff03383', 'Laundry Kilat', 'Rina Marlina', NULL, '730f543e-8c65-4acf-81db-29bf0e104b06', 'Jl. Gajah Mada No. 5, Jakarta', '081234567808', 'aktif', '2026-04-03 00:00:00+07', '2026-02-21 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('50fd3f16-b85b-404f-be40-9fedce1a66fa', 'Roti Bunda', 'Siti Fatimah', '1234567890126', '6d162098-ea1c-48b9-9222-3e9c5e71b397', 'Jl. Ahmad Yani No. 17, Malang', '081234567806', 'aktif', '2026-02-03 00:00:00+07', '2026-02-17 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('2ed8124a-ce00-4301-b089-e7e5c50d5f21', 'Batik Alam Sari', 'Sutrisno', '1234567890124', 'ab23255b-1a8b-40ac-a6da-0cb4e29d63da', 'Jl. Kaliurang No. 45, Yogyakarta', '081234567802', 'aktif', '2026-05-09 00:00:00+07', '2026-02-01 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('a92d9a93-cab0-47f7-af76-2249b2b31a38', 'Sayur Segar Tani', 'Ny. Sumiati', NULL, '4e9d733e-458e-41ad-be5c-cb76133c2941', 'Jl. Raya Lembang No. 3, Bandung', '081234567805', 'aktif', '2026-03-12 00:00:00+07', '2026-03-22 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('bb27a374-41db-4336-b9f2-3b34e03509c2', 'Anyaman Rotan Jaya', 'Bambang Wijaya', NULL, 'ab23255b-1a8b-40ac-a6da-0cb4e29d63da', 'Jl. Cihampelas No. 90, Bandung', '081234567807', 'aktif', '2026-02-06 00:00:00+07', '2026-03-27 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('b83fde62-f1c8-4fa6-97f8-45788abf59a1', 'Bengkel Berkah', 'Agus Salim', '1234567890125', '730f543e-8c65-4acf-81db-29bf0e104b06', 'Jl. Diponegoro No. 21, Semarang', '081234567804', 'nonaktif', '2026-05-24 00:00:00+07', '2026-03-19 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('ba9105c2-d036-471a-84f0-16d6c2a658fd', 'Kreativa Craft', 'Dian Puspitasari', '9120304513789', 'ab23255b-1a8b-40ac-a6da-0cb4e29d63da', 'Jl. Setiabudi No. 145, Kota Bandung', '082145678901', 'aktif', '2026-03-11 00:00:00+07', '2026-04-22 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('db2eafaa-b3cc-4f75-9829-1f81526da471', 'Rumah Jahit Mega', 'Megawati Putri', NULL, 'e94342d4-9328-4a0a-9bcd-f960f6c1f016', 'Jl. Sudirman No. 8, Surabaya', '081234567803', 'aktif', '2026-03-24 00:00:00+07', '2026-04-22 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('cb6666e6-fc49-4287-a800-d90f9ae5235e', 'Kopi Nusantara', 'Fajar Hidayat', '9120304512456', '6d162098-ea1c-48b9-9222-3e9c5e71b397', 'Jl. Buah Batu No. 98, Kota Bandung', '081356789012', 'aktif', '2026-02-12 00:00:00+07', '2026-04-01 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('c8cd9900-5e93-428e-bde7-2f1a72b1f96a', 'Mebel Jati Sejahtera', 'Hendra Gunawan', '9126031845202', 'ab23255b-1a8b-40ac-a6da-0cb4e29d63da', 'Jl. Raya Rancaekek No. 102, Rancaekek, Kabupaten Bandung', '0812-3456-7802', 'aktif', '2026-02-14 00:00:00+07', '2026-05-22 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('4d7cda3a-658d-433a-a81d-2431c0e8ca85', 'Dapur Rempah Ibusari', 'Sari Wulandari', '9126031845201', '6d162098-ea1c-48b9-9222-3e9c5e71b397', 'Jl. Terusan Buah Batu No. 88, Bojongsoang, Kabupaten Bandung', '0812-3456-7801', 'aktif', '2026-07-26 00:00:00+07', '2026-05-24 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('ceba36d4-8ff3-46c4-820a-4b57f1fae436', 'Agro Hijau Mandiri', 'Wahyu Saputra', '9120304514962', '4e9d733e-458e-41ad-be5c-cb76133c2941', 'Jl. Raya Lembang No. 88, Kabupaten Bandung Barat', '085234567890', 'aktif', '2026-02-25 00:00:00+07', '2026-05-14 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('d378291b-c10d-4f27-848b-9ebad45a6d70', 'Glow Beauty Studio', 'Lestari Ayu', '9126031845204', '730f543e-8c65-4acf-81db-29bf0e104b06', 'Jl. Gegerkalong Hilir No. 45, Sukasari, Kota Bandung', '0812-3456-7804', 'nonaktif', '2026-03-21 00:00:00+07', '2026-06-23 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('95fa54c3-c317-4d8d-87b9-49084fc64c33', 'Aneka Frozen Food Barokah', 'Nur Aisyah', '9126031845205', '6d162098-ea1c-48b9-9222-3e9c5e71b397', 'Jl. Cibiru Hilir No. 31, Cibiru, Kota Bandung', '0812-3456-7805', 'aktif', '2026-03-19 00:00:00+07', '2026-06-19 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('93417e36-5fd1-45e6-8a38-f580121bb1ec', 'Fresh Farm Organik', 'Andi Prasetyo', '9126031845203', '4e9d733e-458e-41ad-be5c-cb76133c2941', 'Jl. Maribaya No. 24, Lembang, Kabupaten Bandung Barat', '0812-3456-7803', 'aktif', '2026-02-19 00:00:00+07', '2026-06-24 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('238329b5-f11b-4f1f-a59a-e8b0f5bfeb11', 'Tani Makmur Hidroponik', 'Rudi Hartono', '9126031845206', '4e9d733e-458e-41ad-be5c-cb76133c2941', 'Jl. Kolonel Masturi No. 67, Parongpong, Kabupaten Bandung Barat', '0812-3456-7806', 'aktif', '2026-04-18 00:00:00+07', '2026-07-13 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('0a5be00e-ab39-4b09-bd42-4d126a89d9d9', 'Service Elektronik Prima', 'Budi Kurniawan', '9126031845208', '730f543e-8c65-4acf-81db-29bf0e104b06', 'Jl. Soekarno Hatta No. 512, Kiaracondong, Kota Bandung', '0812-3456-7808', 'aktif', '2026-04-07 00:00:00+07', '2026-07-15 00:00:00+07');
+INSERT INTO umkm (id, nama_usaha, nama_pemilik, nib, kategori_id, alamat, telepon, status, created_at, updated_at) VALUES ('93425bf6-87fc-4a8d-acd2-9e53d33d52c7', 'Rajut Cantika', 'Intan Permata', '9126031845207', 'ab23255b-1a8b-40ac-a6da-0cb4e29d63da', 'Jl. Arcamanik Endah No. 12, Arcamanik, Kota Bandung', '0812-3456-7807', 'aktif', '2026-06-23 00:00:00+07', '2026-07-27 00:00:00+07');
 
-INSERT INTO program_pembinaan (nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai)
-VALUES
-  ('Bantuan Modal Usaha Tahap 1', 'modal', 'Penyaluran modal usaha untuk UMKM tahap awal', '2026-01-10', '2026-03-10'),
-  ('Pelatihan Digital Marketing', 'pelatihan', 'Pelatihan pemasaran digital untuk pelaku UMKM', '2026-02-05', '2026-02-07'),
-  ('Bantuan Alat Produksi', 'alat', 'Penyaluran alat produksi untuk usaha kerajinan & kuliner', '2026-03-01', NULL),
-  ('Fasilitasi Pameran & Pemasaran', 'pemasaran', 'Pendampingan UMKM ikut pameran lokal', '2026-04-15', '2026-04-20');
+-- Data untuk program_pembinaan
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('23df3222-306a-430f-8940-7759a739f5a2', 'Bantuan Modal Usaha Tahap 1', 'modal', 'Penyaluran modal usaha untuk UMKM tahap awal', '2026-01-10', '2026-03-10', '2026-07-18 08:33:45.598348+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('05439ebb-7b0f-47e6-b874-37a3f150d2c2', 'Pelatihan Digital Marketing', 'pelatihan', 'Pelatihan pemasaran digital untuk pelaku UMKM', '2026-02-05', '2026-02-07', '2026-07-18 08:33:45.598348+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('71a6165e-e76e-492b-a723-d9ec2b8f4458', 'Bantuan Alat Produksi', 'alat', 'Penyaluran alat produksi untuk usaha kerajinan & kuliner', '2026-03-01', NULL, '2026-07-18 08:33:45.598348+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('ab60f156-1be2-4997-a5be-ea0856e616da', 'Fasilitasi Pameran & Pemasaran', 'pemasaran', 'Pendampingan UMKM ikut pameran lokal', '2026-04-15', '2026-04-20', '2026-07-18 08:33:45.598348+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('615c1cce-48d9-4fdb-aa86-384f8e3d9702', 'Workshop Pengelolan Keuangan UMKM', 'pelatihan', 'Pelatihan pencatatan keuangan sederhana, penyusunan laporan laba rugi, dan pengelolaan arus kas untuk pelaku UMKM.', '2026-08-18', '2026-08-20', '2026-07-18 11:26:50.676784+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('f5b30b6b-2da7-44da-aa7b-f9b25698f136', 'Bantuan Mesin Pengemasan Produk', 'alat', 'Bantuan mesin pengemasan untuk meningkatkan kualitas kemasan dan efisiensi proses produksi UMKM.', '2026-10-01', '2026-10-15', '2026-07-18 11:27:32.545623+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('5a8ddf1d-eb59-409e-8764-54fbce99f8e1', 'Bantuan Modal Pengembangan Usaha', 'modal', 'Bantuan modal bagi UMKM yang ingin meningkatkan kapasitas produksi dan memperluas usahanya.', '2026-05-05', '2026-06-30', '2026-07-18 19:10:37.077266+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('8ebd59c7-79c8-4cab-9d00-09bde88af3f3', 'Pelatihan Pengelolaan Stok Barang', 'pelatihan', 'Pelatihan pengelolaan persediaan barang, pencatatan stok, dan perencanaan kebutuhan bahan baku secara efisien.', '2026-07-14', '2026-07-16', '2026-07-18 19:11:07.638227+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('36a0d648-437d-4a2f-b544-a48a5b43a11a', 'Bantuan Peralatan Kasir Digital', 'alat', 'Penyaluran perangkat kasir digital untuk membantu UMKM dalam transaksi dan pencatatan penjualan.', '2026-09-09', '2026-08-20', '2026-07-18 19:11:46.13546+07');
+INSERT INTO program_pembinaan (id, nama_program, jenis, deskripsi, tanggal_mulai, tanggal_selesai, created_at) VALUES ('7d359cdb-515f-4b92-85de-065c6971cae5', 'Promosi Produk melalui Marketplace', 'pemasaran', 'Pendampingan promosi produk di marketplace dan media sosial untuk meningkatkan jangkauan pasar serta penjualan UMKM.', '2026-11-03', '2027-12-05', '2026-07-18 19:12:25.737156+07');
 
-INSERT INTO riwayat_pembinaan (umkm_id, program_id, status, catatan, tanggal_ikut)
-SELECT u.id, p.id, v.status, v.catatan, v.tanggal_ikut::date
-FROM (VALUES
-  ('Kopi Senja', 'Bantuan Modal Usaha Tahap 1', 'selesai', 'Modal cair penuh, omzet naik 20%', '2026-01-15'),
-  ('Kopi Senja', 'Pelatihan Digital Marketing', 'aktif', 'Sedang mengikuti sesi ke-2', '2026-02-05'),
-  ('Batik Alam Sari', 'Bantuan Alat Produksi', 'aktif', 'Menunggu pengiriman alat cap batik', '2026-03-02'),
-  ('Rumah Jahit Mega', 'Pelatihan Digital Marketing', 'selesai', 'Sudah punya toko online', '2026-02-05'),
-  ('Sayur Segar Tani', 'Bantuan Modal Usaha Tahap 1', 'terdaftar', 'Menunggu verifikasi berkas', '2026-03-10'),
-  ('Roti Bunda', 'Fasilitasi Pameran & Pemasaran', 'terdaftar', 'Sudah daftar, menunggu jadwal', '2026-04-01'),
-  ('Anyaman Rotan Jaya', 'Bantuan Alat Produksi', 'selesai', 'Alat sudah diterima dan digunakan', '2026-03-05')
-) AS v(umkm_nama, program_nama, status, catatan, tanggal_ikut)
-JOIN umkm u ON u.nama_usaha = v.umkm_nama
-JOIN program_pembinaan p ON p.nama_program = v.program_nama;
+-- Data untuk riwayat_pembinaan
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('8b7a86b3-fe37-41fe-b034-e34fcec33f14', 'a92d9a93-cab0-47f7-af76-2249b2b31a38', '23df3222-306a-430f-8940-7759a739f5a2', 'terdaftar', 'Menunggu verifikasi berkas', '2026-03-10', '2026-07-18 08:33:45.598348+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('dc06a074-53eb-460a-869e-ae047ecf020a', 'db2eafaa-b3cc-4f75-9829-1f81526da471', '05439ebb-7b0f-47e6-b874-37a3f150d2c2', 'selesai', 'Sudah punya toko online', '2026-02-05', '2026-07-18 08:33:45.598348+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('f30e4f78-59a3-4d75-afad-34c63ff136d9', '2ed8124a-ce00-4301-b089-e7e5c50d5f21', '71a6165e-e76e-492b-a723-d9ec2b8f4458', 'aktif', 'Menunggu pengiriman alat cap batik', '2026-03-02', '2026-07-18 08:33:45.598348+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('d2144748-bd86-430a-88b0-f622b1f32fe9', 'bb27a374-41db-4336-b9f2-3b34e03509c2', '71a6165e-e76e-492b-a723-d9ec2b8f4458', 'selesai', 'Alat sudah diterima dan digunakan', '2026-03-05', '2026-07-18 08:33:45.598348+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('08eb956b-c106-41bd-afd5-38931b029a79', 'cb6666e6-fc49-4287-a800-d90f9ae5235e', '615c1cce-48d9-4fdb-aa86-384f8e3d9702', 'terdaftar', 'Mengikuti pelatihan untuk meningkatkan kemampuan pencatatan keuangan usaha.', '2026-07-18', '2026-07-18 11:31:55.101059+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('c858287b-b90c-4576-939c-418466da726b', 'ba9105c2-d036-471a-84f0-16d6c2a658fd', 'f5b30b6b-2da7-44da-aa7b-f9b25698f136', 'terdaftar', 'Terdaftar sebagai calon penerima bantuan mesin pengemasan produk.', '2026-07-18', '2026-07-18 11:32:16.648867+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('65b2f42c-123b-428c-8f99-2738bea012f0', 'ceba36d4-8ff3-46c4-820a-4b57f1fae436', 'ab60f156-1be2-4997-a5be-ea0856e616da', 'terdaftar', 'Akan mengikuti pameran produk UMKM tingkat kabupaten untuk memperluas pemasaran.', '2026-07-18', '2026-07-18 11:32:37.567258+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('9c2bf68d-1349-4110-a79a-5750b8beed57', '4d7cda3a-658d-433a-a81d-2431c0e8ca85', '615c1cce-48d9-4fdb-aa86-384f8e3d9702', 'terdaftar', 'Mengikuti pelatihan pencatatan keuangan untuk usaha kuliner.', '2026-08-05', '2026-07-18 19:21:16.945661+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('dfbad8ff-7c0d-46e4-8368-b4eb9776d0e8', 'c8cd9900-5e93-428e-bde7-2f1a72b1f96a', '36a0d648-437d-4a2f-b544-a48a5b43a11a', 'aktif', 'Peralatan kasir digital telah diterima dan mulai digunakan.', '2026-09-12', '2026-07-18 19:21:47.67733+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('db056fbb-38bb-4793-a8d6-e5d728d2feac', '93417e36-5fd1-45e6-8a38-f580121bb1ec', '5a8ddf1d-eb59-409e-8764-54fbce99f8e1', 'aktif', 'Modal dimanfaatkan untuk pembangunan greenhouse dan pembelian bibit.', '2026-03-10', '2026-07-18 19:22:40.972138+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('cd94b1c2-a3d8-462e-964d-918d1264e671', 'd378291b-c10d-4f27-848b-9ebad45a6d70', '7d359cdb-515f-4b92-85de-065c6971cae5', 'selesai', 'Berhasil membuka toko di marketplace dan meningkatkan jumlah pelanggan.', '2026-11-05', '2026-07-18 19:23:19.680153+07');
+INSERT INTO riwayat_pembinaan (id, umkm_id, program_id, status, catatan, tanggal_ikut, created_at) VALUES ('54664278-02d0-4f4d-baf7-07cad7f2fa3e', '93425bf6-87fc-4a8d-acd2-9e53d33d52c7', 'ab60f156-1be2-4997-a5be-ea0856e616da', 'dibatalkan', 'Berpartisipasi dalam pameran UMKM tingkat Kota Bandung untuk memperluas pemasaran produk.', '2026-07-14', '2026-07-18 19:23:53.774346+07');
 
-INSERT INTO bantuan_diterima (riwayat_id, jenis_bantuan, nominal, keterangan, tanggal_salur)
-SELECT r.id, v.jenis_bantuan, v.nominal, v.keterangan, v.tanggal_salur::date
-FROM (VALUES
-  ('Kopi Senja', 'Bantuan Modal Usaha Tahap 1', 'Dana Modal Usaha', 5000000, 'Transfer bank tahap 1', '2026-01-20'),
-  ('Anyaman Rotan Jaya', 'Bantuan Alat Produksi', 'Alat Anyaman Set', 2500000, 'Diserahkan langsung', '2026-03-08')
-) AS v(umkm_nama, program_nama, jenis_bantuan, nominal, keterangan, tanggal_salur)
-JOIN umkm u ON u.nama_usaha = v.umkm_nama
-JOIN program_pembinaan p ON p.nama_program = v.program_nama
-JOIN riwayat_pembinaan r ON r.umkm_id = u.id AND r.program_id = p.id;
+-- Data untuk bantuan_diterima
+INSERT INTO bantuan_diterima (id, riwayat_id, jenis_bantuan, nominal, keterangan, tanggal_salur, created_at) VALUES ('36fa7816-3985-4b29-b954-6fadafbcbebf', '65b2f42c-123b-428c-8f99-2738bea012f0', 'Fasilitasi Pameran UMKM', '2500000.00', 'Bantuan biaya stan pameran dan promosi produk pertanian.', '2026-08-18', '2026-07-18 11:37:39.642863+07');
+INSERT INTO bantuan_diterima (id, riwayat_id, jenis_bantuan, nominal, keterangan, tanggal_salur, created_at) VALUES ('cd80881e-a1fb-452e-8cbb-1ecb35ac009f', 'c858287b-b90c-4576-939c-418466da726b', 'Mesin Sealer & Alat Pengemasan', '4000000.00', 'Bantuan mesin pengemasan untuk meningkatkan kualitas produk kerajinan.', '2026-07-18', '2026-07-18 11:38:02.528701+07');
+INSERT INTO bantuan_diterima (id, riwayat_id, jenis_bantuan, nominal, keterangan, tanggal_salur, created_at) VALUES ('2e998e2c-23df-4567-88de-4d607ce9c0de', '08eb956b-c106-41bd-afd5-38931b029a79', 'Pelatihan Pengelolaan Keuangan', '500000.00', 'Mengikuti pelatihan pencatatan keuangan dan penyusunan laporan usaha.', '2026-07-18', '2026-07-18 11:38:41.165261+07');
+INSERT INTO bantuan_diterima (id, riwayat_id, jenis_bantuan, nominal, keterangan, tanggal_salur, created_at) VALUES ('35bfe809-9df6-44d1-9d2b-bdee003f57d9', 'd2144748-bd86-430a-88b0-f622b1f32fe9', 'Alat Anyaman Set', '2500000.00', 'Bantuan alat produksi untuk meningkatkan kapasitas usaha anyaman rotan.', '2026-07-18', '2026-07-18 11:39:01.758458+07');
+INSERT INTO bantuan_diterima (id, riwayat_id, jenis_bantuan, nominal, keterangan, tanggal_salur, created_at) VALUES ('2b89b87f-e57f-4d76-85f1-6dac239596b0', 'db056fbb-38bb-4793-a8d6-e5d728d2feac', 'Modal Usaha', '15000000.00', 'Bantuan modal untuk pembangunan greenhouse dan pembelian bibit sayuran.', '2026-05-20', '2026-07-18 19:25:19.080027+07');
+INSERT INTO bantuan_diterima (id, riwayat_id, jenis_bantuan, nominal, keterangan, tanggal_salur, created_at) VALUES ('00bdbdc1-7d3f-422a-bb15-fd4721d95116', '9c2bf68d-1349-4110-a79a-5750b8beed57', 'Modal Usaha', '10000000.00', 'Penambahan peralatan dapur dan pembelian bahan baku.', '2026-06-02', '2026-07-18 19:26:31.03111+07');
